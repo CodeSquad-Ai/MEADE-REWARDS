@@ -1071,24 +1071,28 @@ span {
 
 
 /* --------- Testimonial css ---------- */
+/* ====================== */
+/* Testimonial Section    */
+/* ====================== */
 
 .testimonial-section {
     padding: 100px 0;
     background-color: #000000;
 }
+
 /* Slightly smaller font and constrained width for a 3-line display */
 .three-line-container {
-    max-width: 650px;        /* Adjust as needed */
-    margin: 0 auto;          /* Center the paragraph horizontally */
-    text-align: center;      /* Center the text */
-  }
-  
-  .three-line-container p.text-white {
-    font-size: 15px;         /* Slightly smaller than usual */
-    line-height: 1.4;        /* Tighter line spacing */
-  }
-  
+    max-width: 650px; 
+    margin: 0 auto;
+    text-align: center;
+}
 
+.three-line-container p.text-white {
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* TNS (tiny-slider?) controls styling */
 .testimonial-section .tns-controls {
     position: absolute;
     width: 100%;
@@ -1100,7 +1104,7 @@ span {
 
 .testimonial-section .tns-controls button {
     border: none;
-    background: 0 0;
+    background: transparent;
 }
 
 .testimonial-section .tns-controls button svg {
@@ -1193,6 +1197,39 @@ span {
     font-size: 80px;
     line-height: 1;
     color: #EACA6C;
+}
+
+/* ====================== */
+/* Mobile Responsive Fix  */
+/* ====================== */
+@media (max-width: 768px) {
+  /* Adjust overall section padding on mobile */
+  .testimonial-section {
+      padding: 60px 0;
+  }
+
+  /* Reduce testimonial wrapper padding so content fits better */
+  .testimonial-section .testimonial-wrapper {
+      padding: 20px;
+  }
+
+  /* Single Testimonial container */
+  .testimonial-section .single-testimonial {
+      padding: 20px;
+  }
+
+  /* Decrease the quote icon size & reposition it */
+  .testimonial-section .single-testimonial .quote {
+      top: 10px;
+      right: 10px;
+      font-size: 50px;
+  }
+
+  /* Adjust text size for smaller screens */
+  .testimonial-section .single-testimonial .info p {
+      font-size: 14px;
+      line-height: 1.5;
+  }
 }
 
 /* ------ pricing css --------- */
