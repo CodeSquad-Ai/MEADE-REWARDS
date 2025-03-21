@@ -902,6 +902,10 @@ span {
 /* ------- About CSS Updates -------- */
 
 /* ✅ Added spacing between Starter, Growth, and Wealth Plans */
+.plan-list {
+    margin-top: 20px; /* Adjust value as needed */
+}
+
 .plan-list li {
     margin-bottom: 20px; /* Adds space between the plans */
 }
@@ -1072,6 +1076,18 @@ span {
     padding: 100px 0;
     background-color: #000000;
 }
+/* Slightly smaller font and constrained width for a 3-line display */
+.three-line-container {
+    max-width: 650px;        /* Adjust as needed */
+    margin: 0 auto;          /* Center the paragraph horizontally */
+    text-align: center;      /* Center the text */
+  }
+  
+  .three-line-container p.text-white {
+    font-size: 15px;         /* Slightly smaller than usual */
+    line-height: 1.4;        /* Tighter line spacing */
+  }
+  
 
 .testimonial-section .tns-controls {
     position: absolute;
@@ -1181,11 +1197,43 @@ span {
 
 /* ------ pricing css --------- */
 
-.single-pricing {
-    padding: 25px 30px 30px;
-    box-shadow: 0 0 11px 0 rgb(154 154 154 / 16%);
+/* Keep columns at equal heights by stretching them */
+.pricing-area .row.justify-content-center {
+    align-items: stretch;
 }
 
+/* Force columns to become flex containers so .single-pricing can fill the height */
+.pricing-area .row.justify-content-center .col-lg-4,
+.pricing-area .row.justify-content-center .col-md-7,
+.pricing-area .row.justify-content-center .col-sm-9 {
+    display: flex;
+}
+
+/* Single Pricing Card */
+.single-pricing {
+    flex: 1; /* Fills available height */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* or space-between if you want the button at the bottom */
+    background: #fff;
+    border-radius: 8px;
+    padding: 25px 30px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07); /* Subtle shadow */
+    transition: all 0.3s ease; /* Smooth hover transition */
+}
+
+/* Hover Effect */
+.single-pricing:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    transform: translateY(-5px);
+}
+
+/* Pin the button at the bottom (optional) */
+.single-pricing .pricing-btn {
+    margin-top: auto;
+}
+
+/* Title & Pricing Styles */
 .single-pricing .pricing-title .title {
     font-size: 25px;
     font-weight: 500;
@@ -1215,10 +1263,7 @@ span {
     line-height: 39px;
 }
 
-.single-pricing .pricing-btn {
-    margin-top: 28px;
-}
-
+/* Buttons */
 .single-pricing .pricing-btn .main-btn.main-btn-2 {
     background-color: transparent;
     color: #000000;
