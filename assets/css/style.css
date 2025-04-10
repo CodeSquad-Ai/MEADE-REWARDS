@@ -384,6 +384,15 @@ span {
     height: 800px;
     background-position: bottom center;
 }
+.gold-text {
+    color: #EACA6C;
+    /* text-transform: lowercase;  -- already set inline if needed */
+  }
+  
+  .black-text {
+    color: #000000;
+  }
+  
 
 .header-hero .shape {
     position: absolute;
@@ -727,10 +736,10 @@ span {
     margin-bottom: 40px;
 }
 
-/* Product Grid Layout */
+/* Updated: Product Grid Layout - 4 items per row */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* 4 items per row */
     gap: 25px;
     justify-content: center;
 }
@@ -812,13 +821,13 @@ span {
 /* Responsive Grid */
 @media (max-width: 1024px) {
     .product-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row for medium screens */
     }
 }
 
 @media (max-width: 768px) {
     .product-grid {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(1, 1fr); /* 1 item per row for smaller screens */
     }
 
     .feature-details {
@@ -1071,28 +1080,24 @@ span {
 
 
 /* --------- Testimonial css ---------- */
-/* ====================== */
-/* Testimonial Section    */
-/* ====================== */
 
 .testimonial-section {
     padding: 100px 0;
     background-color: #000000;
 }
-
 /* Slightly smaller font and constrained width for a 3-line display */
 .three-line-container {
-    max-width: 650px; 
-    margin: 0 auto;
-    text-align: center;
-}
+    max-width: 650px;        /* Adjust as needed */
+    margin: 0 auto;          /* Center the paragraph horizontally */
+    text-align: center;      /* Center the text */
+  }
+  
+  .three-line-container p.text-white {
+    font-size: 15px;         /* Slightly smaller than usual */
+    line-height: 1.4;        /* Tighter line spacing */
+  }
+  
 
-.three-line-container p.text-white {
-    font-size: 13px;
-    line-height: 1.4;
-}
-
-/* TNS (tiny-slider?) controls styling */
 .testimonial-section .tns-controls {
     position: absolute;
     width: 100%;
@@ -1104,7 +1109,7 @@ span {
 
 .testimonial-section .tns-controls button {
     border: none;
-    background: transparent;
+    background: 0 0;
 }
 
 .testimonial-section .tns-controls button svg {
@@ -1197,39 +1202,6 @@ span {
     font-size: 80px;
     line-height: 1;
     color: #EACA6C;
-}
-
-/* ====================== */
-/* Mobile Responsive Fix  */
-/* ====================== */
-@media (max-width: 768px) {
-  /* Adjust overall section padding on mobile */
-  .testimonial-section {
-      padding: 60px 0;
-  }
-
-  /* Reduce testimonial wrapper padding so content fits better */
-  .testimonial-section .testimonial-wrapper {
-      padding: 20px;
-  }
-
-  /* Single Testimonial container */
-  .testimonial-section .single-testimonial {
-      padding: 20px;
-  }
-
-  /* Decrease the quote icon size & reposition it */
-  .testimonial-section .single-testimonial .quote {
-      top: 10px;
-      right: 10px;
-      font-size: 50px;
-  }
-
-  /* Adjust text size for smaller screens */
-  .testimonial-section .single-testimonial .info p {
-      font-size: 14px;
-      line-height: 1.5;
-  }
 }
 
 /* ------ pricing css --------- */
